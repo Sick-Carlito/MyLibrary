@@ -19,11 +19,11 @@ function render(library) {
   // body...
 }
 
-const titleText = document.quaryselector('#inputTitle');
-const authorText = document.quaryselector('#inputAuthor');
-const pagesText = document.quaryselector('#inputPages');
-const readText = document.quaryselector('#inputRead');
-const submitBook = document.quaryselector('#submit-book');
+const titleText = document.querySelector('#inputTitle');
+const authorText = document.querySelector('#inputAuthor');
+const pagesText = document.querySelector('#inputPages');
+const readText = document.querySelector('#inputRead');
+const submitBook = document.querySelector('#submit-book');
 
 function clearFields() {
   authorText.value = '';

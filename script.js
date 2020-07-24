@@ -7,6 +7,11 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.readToggle = function() {
+  this.read = !this.read;
+  render(myLibrary);
+}
+
 // Book.info = function () {
 //   console.log();
 // };
@@ -20,6 +25,7 @@ function removeFromLibrary(index){
   console.log(index);
 }
 
+
 function render(library) {
   let divContainer = document.querySelector('#library-container');
   divContainer.innerHTML = null;
@@ -31,11 +37,16 @@ function render(library) {
               ${element.title},
               ${element.author},
               ${element.pages},
-              ${element.read},
+              <button id='btn-read-${index}' >${element.read? "Read" : "Not read"}</button>,
               <button id='btn-remove-${index}' >Remove</button>
               </div>`
   divContainer.appendChild(card);
   console.log(myLibrary);
+
+  btnRead = document.querySelector(`#btn-read-${index}`);
+  btnRead.addEventListener('click', () => {
+    element.readToggle();
+  });
 
   btnRemove = document.querySelector(`#btn-remove-${index}`);
   btnRemove.addEventListener('click', () => {
@@ -62,7 +73,7 @@ submitBook.addEventListener('click', () => {
   const title = titleText.value;
   const author = authorText.value;
   const pages = pagesText.value;
-  const read = readText.checked? "Read" : "Not read";
+  const read = readText.checked;
 
   for (let i = 0; i < myLibrary.length; i++) {
     if (title == myLibrary[i].title) {

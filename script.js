@@ -13,6 +13,12 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
+};
+
+function removeFromLibrary(element){
+  let index = myLibrary.findIndex(x => x.title === element.title);
+  myLibrary.splice(index,1);
+  console.log(index);
 }
 
 function render(library) {
@@ -26,10 +32,15 @@ function render(library) {
               ${element.author},
               ${element.pages},
               ${element.read},
-              <button id='${element}' >Remove</button>
+              <button id='${element.title}Remove' >Remove</button>
               </div>`
-  
   divContainer.appendChild(card);
+
+  btnRemove = document.querySelector(`#${element.title}Remove`);
+  btnRemove.addEventListener('click', () => {
+    removeFromLibrary(element);
+    render(library);
+  });
   });
 }
 
@@ -48,10 +59,9 @@ function clearFields() {
 
 submitBook.addEventListener('click', () => {
   const title = titleText.value;
-  console.log(title);
   const author = authorText.value;
   const pages = pagesText.value;
-  const read = readText.checked;
+  const read = readText.checked? "Read" : "Not read";
 
   for (let i = 0; i < myLibrary.length; i++) {
     if (title == myLibrary[i].title) {

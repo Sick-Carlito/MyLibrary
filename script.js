@@ -15,8 +15,7 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 };
 
-function removeFromLibrary(element){
-  let index = myLibrary.findIndex(x => x.title === element.title);
+function removeFromLibrary(index){
   myLibrary.splice(index,1);
   console.log(index);
 }
@@ -26,19 +25,21 @@ function render(library) {
   divContainer.innerHTML = null;
 
   library.forEach(element => {
+    let index = myLibrary.findIndex(x => x.title === element.title);
     let card = document.createElement("div");
     card.innerHTML =`<div>
               ${element.title},
               ${element.author},
               ${element.pages},
               ${element.read},
-              <button id='${element.title}Remove' >Remove</button>
+              <button id='btn-remove-${index}' >Remove</button>
               </div>`
   divContainer.appendChild(card);
+  console.log(myLibrary);
 
-  btnRemove = document.querySelector(`#${element.title}Remove`);
+  btnRemove = document.querySelector(`#btn-remove-${index}`);
   btnRemove.addEventListener('click', () => {
-    removeFromLibrary(element);
+    removeFromLibrary(index);
     render(library);
   });
   });

@@ -15,9 +15,9 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-function render(library) {
+//function render(library) {
   // body...
-}
+//}
 
 const titleText = document.querySelector('#input-title');
 const authorText = document.querySelector('#input-author');
@@ -32,14 +32,14 @@ function clearFields() {
   readText.checked = false;
 }
 
-submitBook.addEventListener('click', (e) => {
+submitBook.addEventListener('click', () => {
   const title = titleText.value;
   console.log(title);
   const author = authorText.value;
   const pages = pagesText.value;
   const read = readText.checked;
 
-  for (i = 0; i < myLibrary.length; i++) {
+  for (let i = 0; i < myLibrary.length; i++) {
     if (title == myLibrary[i].title) {
       alert('The Book you entered already exists!');
       break;
@@ -48,7 +48,7 @@ submitBook.addEventListener('click', (e) => {
 
   const newBook = new Book(title, author, pages, read);
   addBookToLibrary(newBook);
-  render(myLibrary);
+  //render(myLibrary);
   clearFields();
 });
 

@@ -15,9 +15,20 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-//function render(library) {
-  // body...
-//}
+function render(library) {
+  let divContainer = document.querySelector('#library-container');
+  divContainer.innerHTML = null;
+  library.forEach(element => {
+    let card = document.createElement("div");
+    card.innerHTML =`<div>
+              ${element.title},
+              ${element.author},
+              ${element.pages},
+              ${element.read}
+              </div>`
+  divContainer.appendChild(card);
+  });
+}
 
 const titleText = document.querySelector('#input-title');
 const authorText = document.querySelector('#input-author');
@@ -48,7 +59,7 @@ submitBook.addEventListener('click', () => {
 
   const newBook = new Book(title, author, pages, read);
   addBookToLibrary(newBook);
-  //render(myLibrary);
+  render(myLibrary);
   clearFields();
 });
 

@@ -18,14 +18,17 @@ function addBookToLibrary(book) {
 function render(library) {
   let divContainer = document.querySelector('#library-container');
   divContainer.innerHTML = null;
+
   library.forEach(element => {
     let card = document.createElement("div");
     card.innerHTML =`<div>
               ${element.title},
               ${element.author},
               ${element.pages},
-              ${element.read}
+              ${element.read},
+              <button id='${element}' >Remove</button>
               </div>`
+  
   divContainer.appendChild(card);
   });
 }

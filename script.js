@@ -67,7 +67,7 @@ submitBook.addEventListener('click', () => {
   for (let i = 0; i < myLibrary.length; i++) {
     if (title == myLibrary[i].title) {
       alert('The Book you entered already exists!');
-      break;
+     return;
     }
   }
 

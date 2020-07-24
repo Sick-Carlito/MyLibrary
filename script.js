@@ -19,11 +19,11 @@ function render(library) {
   // body...
 }
 
-const titleText = document.querySelector('#inputTitle');
-const authorText = document.querySelector('#inputAuthor');
-const pagesText = document.querySelector('#inputPages');
-const readText = document.querySelector('#inputRead');
-const submitBook = document.querySelector('#submit-book');
+const titleText = document.querySelector('#input-title');
+const authorText = document.querySelector('#input-author');
+const pagesText = document.querySelector('#input-pages');
+const readText = document.querySelector('#input-read');
+const submitBook = document.querySelector('#btn-add'); //Changed to consistant id naming
 
 function clearFields() {
   authorText.value = '';
@@ -34,13 +34,14 @@ function clearFields() {
 
 submitBook.addEventListener('click', (e) => {
   const title = titleText.value;
+  console.log(title);
   const author = authorText.value;
   const pages = pagesText.value;
   const read = readText.checked;
 
   for (i = 0; i < myLibrary.length; i++) {
     if (title == myLibrary[i].title) {
-      alert('The Book you entered already exist!');
+      alert('The Book you entered already exists!');
       break;
     }
   }

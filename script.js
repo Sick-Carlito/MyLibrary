@@ -7,34 +7,55 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.readToggle = function() {
+  this.read = !this.read;
+  render(myLibrary);
+}
+
+// Book.info = function () {
+//   console.log();
+// };
+
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-function removeFromLibrary(element){
-  let index = myLibrary.findIndex(x => x.title === element.title);
+function removeFromLibrary(index){
   myLibrary.splice(index,1);
   console.log(index);
 }
+
 
 function render(library) {
   let divContainer = document.querySelector('#library-container');
   divContainer.innerHTML = null;
 
   library.forEach(element => {
+    let index = myLibrary.findIndex(x => x.title === element.title);
     let card = document.createElement("div");
     card.innerHTML =`<div id=card>
               ${element.title},
               ${element.author},
               ${element.pages},
+
               ${element.read},
               <button class='removeBtn'id='${element.title}Remove' >Remove</button>
+
+              <button id='btn-read-${index}' >${element.read? "Read" : "Not read"}</button>,
+              <button id='btn-remove-${index}' >Remove</button>
+
               </div>`
   divContainer.appendChild(card);
+  console.log(myLibrary);
 
-  btnRemove = document.querySelector(`#${element.title}Remove`);
+  btnRead = document.querySelector(`#btn-read-${index}`);
+  btnRead.addEventListener('click', () => {
+    element.readToggle();
+  });
+
+  btnRemove = document.querySelector(`#btn-remove-${index}`);
   btnRemove.addEventListener('click', () => {
-    removeFromLibrary(element);
+    removeFromLibrary(index);
     render(library);
   });
   });
@@ -57,12 +78,12 @@ submitBook.addEventListener('click', () => {
   const title = titleText.value;
   const author = authorText.value;
   const pages = pagesText.value;
-  const read = readText.checked? "Read" : "Not read";
+  const read = readText.checked;
 
   for (let i = 0; i < myLibrary.length; i++) {
     if (title == myLibrary[i].title) {
       alert('The Book you entered already exists!');
-      break;
+     return;
     }
   }
 

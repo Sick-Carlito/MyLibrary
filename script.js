@@ -7,13 +7,9 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-// Book.info = function () {
-//   console.log();
-// };
-
 function addBookToLibrary(book) {
   myLibrary.push(book);
-};
+}
 
 function removeFromLibrary(element){
   let index = myLibrary.findIndex(x => x.title === element.title);
@@ -27,12 +23,12 @@ function render(library) {
 
   library.forEach(element => {
     let card = document.createElement("div");
-    card.innerHTML =`<div>
+    card.innerHTML =`<div id=card>
               ${element.title},
               ${element.author},
               ${element.pages},
               ${element.read},
-              <button id='${element.title}Remove' >Remove</button>
+              <button class='removeBtn'id='${element.title}Remove' >Remove</button>
               </div>`
   divContainer.appendChild(card);
 

@@ -1,4 +1,63 @@
-#form-container{
-  display: flex;
-  justify-content: center;
+body {
+ height: 100%;
+ width: 100%;
+ margin: 0;
+ column-gap: 2rem;
+
 }
+
+html {    
+    background: url('./images/img2.jpg') no-repeat center fixed;     
+    background-size: cover;
+}
+
+.label {
+	color: white;
+
+}
+
+
+#input-form {
+
+	top: 50%;
+    left: 50%;
+   
+    width: 350px;
+    height: 420px;
+    padding: 50px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+}
+
+h5{
+	font-weight: bold;
+	justify-content: center;
+	display: flex;
+	font-size: 50px;
+}
+
+#library-container {
+
+	
+	color: white;
+
+	top: 50%;
+    left: 50%;
+   
+    margin-left: 60px;
+    height: 420px;
+    padding: 50px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+
+}
+
+.removeBtn {
+	background-color: red;
+	height: 45px;
+	width: 70px;
+	border-radius:10px; 
+}
+

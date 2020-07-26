@@ -4,38 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>myLibrary</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href=”https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+   
 </head>
-<body>
-  <div id=library-container>
+<body class="columns is-multiline">
+  <div class="column is-full">
+    <h5>"Add a book"</h5>
+  </div>
 
+  <div id="library-container" class="column is-half">
   </div>
-  <div id="form-container">
-    <form id="input-form">
-      <div>
-        "Add a book!"
+
+  <form id="input-form" class="column is-half">
+    <div class="field">
+      <label class="label">Title</label>
+      <div class="control">
+        <input class="input" type="text" id="input-title" placeholder="Book title..." value="">
       </div>
-      <div style="padding: 5px;">
-        <label>Title:</label>
-        <input type="text" id="input-title" value=""></input>
+    </div>
+
+    <div class="field">
+      <label class="label">Author</label>
+      <div class="control">
+        <input class="input" type="text" id="input-author" placeholder="Author name..." value=""> 
       </div>
-      <div style="padding: 5px;">
-        <label>Author:</label>
-        <input type="text" id="input-author" value=""></input>
+    </div>
+
+    <div class="field">
+      <label class="label">Pages</label>
+      <div class="control">
+        <input class="input" type="text" id="input-pages" placeholder="number of pages..." value="">
       </div>
-      <div style="padding: 5px;">
-        <label>Pages:</label>
-        <input type="text" id="input-pages" value=""></input>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <label class="checkbox label">
+          <input id="input-read" type="checkbox">Read</input>
+        </label>
       </div>
-      <div style="padding: 5px;">
-        <label>Read:</label>
-        <input id="input-read" type="checkbox"></input>
-      </div>
-      <div style="padding: 5px;">
-        <button type="button" id="btn-add" value="Add">Add</button> 
-      </div>
-     </form>
-  </div>
-  <script src="script.js"></script>
+    </div>
+
+    <div class="control">
+      <button type="button" class="button is-link" id="btn-add" value="Add">Add</button>
+    </div>
+  </form>
+
 </body>
+<script src="script.js"></script>
 </html>

@@ -4,60 +4,74 @@ body {
  margin: 0;
  column-gap: 2rem;
 
+
 }
 
-html {    
-    background: url('./images/img2.jpg') no-repeat center fixed;     
-    background-size: cover;
+html {
+  background: url('./images/img2.jpg') no-repeat center fixed;     
+  background-size: cover;
 }
 
 .label {
-	color: white;
-
+  color: white;
 }
 
+.btn{
+  margin-bottom: 1rem;
+}
 
 #input-form {
-
-	top: 50%;
-    left: 50%;
-   
-    width: 350px;
-    height: 420px;
-    padding: 50px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    background: rgba(0,0,0,.5);
+  display: none;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 412px;
+  padding: 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.5);
 }
 
 h5{
-	font-weight: bold;
-	justify-content: center;
-	display: flex;
-	font-size: 50px;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  font-size: 50px;
 }
 
 #library-container {
-
-	
-	color: white;
-
-	top: 50%;
-    left: 50%;
-   
-    margin-left: 60px;
-    height: 420px;
-    padding: 50px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    background: rgba(0,0,0,.5);
-
+  width: 50em;
+  color: white;
+  top: 50%;
+  left: 50%;
+  margin-left: 60px;
+  height: 480px;
+  padding: 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.5);
 }
 
 .removeBtn {
-	background-color: red;
-	height: 45px;
-	width: 70px;
-	border-radius:10px; 
+  background-color: red;
+  height: 45px;
+  width: 70px;
+  border-radius:10px; 
 }
 
+.removeBtnn {
+  background-color: green;
+  height: 45px;
+  width: 70px;
+  border-radius:10px; 
+}
+
+
+#btnnAdd {
+  position: relative;
+}
+
+.side-section {
+  display: block;
+  justify-content: center;
+}

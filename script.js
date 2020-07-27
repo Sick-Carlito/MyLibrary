@@ -12,10 +12,6 @@ Book.prototype.readToggle = function() {
   render(myLibrary);
 }
 
-// Book.info = function () {
-//   console.log();
-// };
-
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
@@ -36,24 +32,23 @@ function render(library) {
     card.innerHTML =`<div id=card>
               ${element.title},
               ${element.author},
-              ${element.pages},
+              ${element.pages}
 
-              ${element.read},
-              <button class='removeBtn'id='${element.title}Remove' >Remove</button>
+              
 
-              <button id='btn-read-${index}' >${element.read? "Read" : "Not read"}</button>,
-              <button id='btn-remove-${index}' >Remove</button>
+              <button class='removeBtnn' id='btn-read-${index}' >${element.read? "Read" : "Not read"}</button>
+              <button class='removeBtn' id='btn-remove-${index}' >Remove</button>
 
               </div>`
   divContainer.appendChild(card);
   console.log(myLibrary);
 
-  btnRead = document.querySelector(`#btn-read-${index}`);
+  const btnRead = document.querySelector(`#btn-read-${index}`);
   btnRead.addEventListener('click', () => {
     element.readToggle();
   });
 
-  btnRemove = document.querySelector(`#btn-remove-${index}`);
+  const btnRemove = document.querySelector(`#btn-remove-${index}`);
   btnRemove.addEventListener('click', () => {
     removeFromLibrary(index);
     render(library);
@@ -67,12 +62,24 @@ const pagesText = document.querySelector('#input-pages');
 const readText = document.querySelector('#input-read');
 const submitBook = document.querySelector('#btn-add'); //Changed to consistant id naming
 
+
 function clearFields() {
   authorText.value = '';
   titleText.value = '';
   pagesText.value = '';
   readText.checked = false;
 }
+
+function toggleFunction() {
+  var x = document.getElementById("input-form");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+
 
 submitBook.addEventListener('click', () => {
   const title = titleText.value;
@@ -92,7 +99,3 @@ submitBook.addEventListener('click', () => {
   render(myLibrary);
   clearFields();
 });
-
-// console.log(myLibrary)
-
-// book.info();

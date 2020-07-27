@@ -15,44 +15,53 @@
     <h5>"Add a book"</h5>
   </div>
 
-  <div id="library-container" class="column is-half">
-  </div>
 
-  <form id="input-form" class="column is-half">
-    <div class="field">
-      <label class="label">Title</label>
-      <div class="control">
-        <input class="input" type="text" id="input-title" placeholder="Book title..." value="">
+  <section class="columns">
+    <div id="library-container" class="column is-half">
+      
+    </div>
+
+    <section class="column is-half side-section">
+      <div class="control btn">
+        <button type="button" class="button is-link" onclick="toggleFunction()" id="btnn-add" value="Add">New Book!!</button>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">Author</label>
-      <div class="control">
-        <input class="input" type="text" id="input-author" placeholder="Author name..." value=""> 
-      </div>
-    </div>
+      <form id="input-form">
+        <div class="field">
+          <label class="label">Title</label>
+          <div class="control">
+            <input class="input" type="text" id="input-title" placeholder="Book title..." value="">
+          </div>
+        </div>
 
-    <div class="field">
-      <label class="label">Pages</label>
-      <div class="control">
-        <input class="input" type="text" id="input-pages" placeholder="number of pages..." value="">
-      </div>
-    </div>
+        <div class="field">
+          <label class="label">Author</label>
+          <div class="control">
+            <input class="input" type="text" id="input-author" placeholder="Author name..." value="">
+          </div>
+        </div>
 
-    <div class="field">
-      <div class="control">
-        <label class="checkbox label">
-          <input id="input-read" type="checkbox">Read</input>
-        </label>
-      </div>
-    </div>
+        <div class="field">
+          <label class="label">Pages</label>
+          <div class="control">
+            <input class="input" type="text" id="input-pages" placeholder="number of pages..." value="">
+          </div>
+        </div>
 
-    <div class="control">
-      <button type="button" class="button is-link" id="btn-add" value="Add">Add</button>
-    </div>
-  </form>
+        <div class="field">
+          <div class="control">
+            <label class="checkbox label">
+              <input id="input-read" type="checkbox">Read</input>
+            </label>
+          </div>
+        </div>
 
+        <div class="control">
+          <button type="button" class="button is-link" id="btn-add" value="Add">Add</button>
+        </div>
+      </form>
+    </section>
+  </section>
 </body>
 <script src="script.js"></script>
 </html>

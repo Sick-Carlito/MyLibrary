@@ -34,7 +34,7 @@ form {
   padding: 50px;
   border-radius: 10px;
   box-sizing: border-box;
-  background: rgba( 0, 0, 0, .5 );
+  background: rgba(0, 0, 0, 0.5);
 }
 
 h5 {
@@ -54,7 +54,7 @@ h5 {
   padding: 50px;
   border-radius: 10px;
   box-sizing: border-box;
-  background: rgba( 0, 0, 0, .5 );
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .removeBtn {

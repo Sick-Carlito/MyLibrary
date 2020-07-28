@@ -15,14 +15,14 @@ form {
 }
 
 .block {
-  display : block;
+  display: block;
 }
 
 .label {
   color: white;
 }
 
-.btn{
+.btn {
   margin-bottom: 1rem;
 }
 
@@ -34,10 +34,10 @@ form {
   padding: 50px;
   border-radius: 10px;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, .5);
+  background: rgba( 0, 0, 0, .5 );
 }
 
-h5{
+h5 {
   font-weight: bold;
   justify-content: center;
   display: flex;
@@ -54,7 +54,7 @@ h5{
   padding: 50px;
   border-radius: 10px;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, .5);
+  background: rgba( 0, 0, 0, .5 );
 }
 
 .removeBtn {

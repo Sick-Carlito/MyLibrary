@@ -1,0 +1,25 @@
+{
+  "name": "mylibrary",
+  "version": "1.0.0",
+  "description": "A simple JavaSript program that shows a library of books added and read by a user.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sick-Carlito/MyLibrary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sick-Carlito/MyLibrary/issues"
+  },
+  "homepage": "https://github.com/Sick-Carlito/MyLibrary#readme",
+  "devDependencies": {
+    "eslint": "^7.5.0"
+  },
+  "dependencies": {
+    "bulma": "^0.9.0"
+  }
+}

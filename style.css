@@ -12,6 +12,14 @@ html {
   background-size: cover;
 }
 
+form {
+      display: none;
+  }
+
+.block {
+  display : block;
+}
+
 .label {
   color: white;
 }
@@ -21,7 +29,6 @@ html {
 }
 
 #input-form {
-  display: none;
   top: 50%;
   left: 50%;
   width: 350px;

@@ -1,6 +1,4 @@
 let myLibrary = [];
-let storageAvailable = isStorageAvailable();
-let storagePopulated = isStoragePopulated();
 
 let data = getData('library');
 if(data){
@@ -8,33 +6,25 @@ if(data){
     const element = data[i];
     myLibrary.push(element);
   }
-  console.log(myLibrary,'getdata library');
   render(myLibrary);
-}else{
-  console.log('no data');
 }
 
 function getData(key) {
   if (isStorageAvailable() && isStoragePopulated(key)) {
     let rawValue = window.localStorage.getItem(key);
-    console.log(rawValue,"rawValue")
     let parsedValue = JSON.parse(rawValue);
-    console.log(parsedValue,"parsedValue")
     return parsedValue;
   }else{
-    console.log('local storage not utilized')
     return false;
-  };
-};
+  }
+}
 
 function setData(key,value) {
   let valueString = JSON.stringify(value);
-  if (storageAvailable) {
+  if (isStorageAvailable()) {
     window.localStorage.setItem(key,valueString);
-    console.log(key, valueString,'Item set');
-  };
-  console.log(value, valueString);
-};
+  }
+}
 
 
 function isStorageAvailable() {
@@ -46,29 +36,26 @@ function isStorageAvailable() {
     return true;
   }
   catch(error) {
+    let storage = window.localStorage;
     return error instanceof DOMException && (
     error.code === 22 ||
     error.code === 1014 ||
     error.name === 'QuotaExceededError' ||
-    e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+    error.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
     (storage && storage.length !== 0);
   }
-};
+}
 
 function isStoragePopulated(key) {
   if (window.localStorage.getItem(key) !== null && !undefined){return true}
-};
+}
 
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
-}
-
-Book.prototype.readToggle = function() {
-  this.read = !this.read;
-  render(myLibrary);
+  
 }
 
 function addBookToLibrary(book) {
@@ -97,11 +84,11 @@ function render(library) {
               <button class='removeBtn' id='btn-remove-${index}' >Remove</button>
               </div>`
   divContainer.appendChild(card);
-  console.log(myLibrary);
 
   const btnRead = document.querySelector(`#btn-read-${index}`);
   btnRead.addEventListener('click', () => {
-    element.readToggle();
+    element.read = !element.read;
+    render(myLibrary);
   });
 
   const btnRemove = document.querySelector(`#btn-remove-${index}`);
@@ -130,6 +117,10 @@ function toggleFunction() {
   var inputForm = document.querySelector("#input-form");
   inputForm.classList.toggle('block')  
 }
+
+document.querySelector('#btn-form').addEventListener('click', () =>{
+  toggleFunction();
+});
 
 submitBook.addEventListener('click', () => {
   const title = titleText.value;

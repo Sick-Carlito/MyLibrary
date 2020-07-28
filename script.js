@@ -78,7 +78,6 @@ function addBookToLibrary(book) {
 
 function removeFromLibrary(index){
   myLibrary.splice(index,1);
-  console.log(useLocalStorage, myLibrary);
   setData('library',myLibrary);
 }
 

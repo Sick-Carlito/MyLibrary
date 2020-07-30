@@ -1,5 +1,7 @@
 let myLibrary = [];
+loadLibrary();
 
+function loadLibrary() {
 let data = getData('library');
 if(data){
   for (let i = 0; i < data.length; i++) {
@@ -7,6 +9,7 @@ if(data){
     myLibrary.push(element);
   }
   render(myLibrary);
+}
 }
 
 function getData(key) {
@@ -88,6 +91,7 @@ function render(library) {
   const btnRead = document.querySelector(`#btn-read-${index}`);
   btnRead.addEventListener('click', () => {
     element.read = !element.read;
+    setData('library',myLibrary);
     render(myLibrary);
   });
 
